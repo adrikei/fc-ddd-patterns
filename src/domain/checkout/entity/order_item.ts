@@ -1,10 +1,10 @@
 export default class OrderItem {
-  private _id: string;
-  private _productId: string;
-  private _name: string;
-  private _price: number;
-  private _quantity: number;
-  private _total: number;
+  private _id: string
+  private _productId: string
+  private _name: string
+  private _price: number
+  private _quantity: number
+  private _total: number
 
   constructor(
     id: string,
@@ -13,32 +13,46 @@ export default class OrderItem {
     productId: string,
     quantity: number
   ) {
-    this._id = id;
-    this._name = name;
-    this._price = price;
-    this._productId = productId;
-    this._quantity = quantity;
-    this._total = this.total();
+    this._id = id
+    this._name = name
+    this._price = price
+    this._productId = productId
+    this._quantity = quantity
+    this._total = this.total()
+  }
+
+  changeName(newName: string) {
+    this._name = newName
+  }
+
+  changePrice(newPrice: number) {
+    this._price = newPrice
+    this._total = this.total()
+  }
+
+  changeQuantity(newQuantity: number) {
+    this._quantity = newQuantity
+    this._total = this.total()
   }
 
   get id(): string {
-    return this._id;
+    return this._id
   }
 
   get name(): string {
-    return this._name;
+    return this._name
   }
 
   get productId(): string {
-    return this._productId;
+    return this._productId
   }
 
   get quantity(): number {
-    return this._quantity;
+    return this._quantity
   }
 
   get price(): number {
-    return this._price;
+    return this._price
   }
 
   total(): number {
